@@ -12,7 +12,6 @@ syntax enable
 :set guioptions-=T
 :set makeprg=php\ -l\ %
 :set errorformat=%m\ in\ %f\ on\ line\ %l
-":colo twilight256
 :set autoindent
 :set encoding=UTF-8
 :set fileencoding=UTF-8
@@ -88,14 +87,8 @@ inoremap <C-E> <ESC>:call PhpDocSingle()<CR>i
 nnoremap <C-E> :call PhpDocSingle()<CR>
 vnoremap <C-E> :call PhpDocRange()<CR>
 
-"encodage & statusline
-if has("statusline")
-	set statusline=%{GuiTabLabel()}\ %<%f\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
-endif
-noremap <C-u> :e ++enc=latin1 %:p<CR>
-
 let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-" ouvre un onglet dans firefox sur php.net avec le mot selectionné
+" ouvre un onglet dans firefox sur php.net avec le mot selectionnï¿½
 vmap ,p :<C-U>!firefox "http://fr.php.net/<cword>" >& /dev/null<CR><CR>
  
