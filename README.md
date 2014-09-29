@@ -8,3 +8,11 @@ Différents fichiers de configuration
  - .vimrc
  - .vimrc.default
  - .vimrc.dvorak
+
+# PHPStorm / plugin ideavim ( https://github.com/JetBrains/ideavim )
+
+ - .ideavimrc
+
+# XCode / plugin XVim ( https://github.com/JugglerShu/XVim )
+
+ - .xvimrc
