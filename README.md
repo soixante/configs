@@ -5,7 +5,7 @@ Différents fichiers de configuration
 
 # VIM
 
- - .vimrc
+ - [.vimrc] ( .vimrc )
  - .vimrc.default
  - .vimrc.dvorak
 
