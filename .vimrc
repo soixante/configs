@@ -3,6 +3,7 @@ syntax enable
 :set tabstop=4
 :set shiftwidth=4
 :set laststatus=2
+
 :set number
 :set nocompatible
 :set nobackup
@@ -18,50 +19,14 @@ syntax enable
 :set termencoding=UTF-8
 :set showtabline=0
 
-":set gfn=~/fonts/LiberationMono-Regular\ 8
-:set guifont=Liberation\ Mono\ 10
-:set backupdir=~/.vim/.backups
-:set directory=~/.vim/.backups
 :set nobackup
 :set nowritebackup
 :set noswapfile
 
-
 " Go back to the position the cursor was on the last time this file was edited
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")|execute("normal `\"")|endif
 
-:map! ___ echo "</pre>";<Esc>yyPf/xoprint_r();<Esc>F(a
-
-:nmap ,D :set noic<CR>
-:nmap ,d :set ic<CR>
-
-:map <M-h> <C-w>>
-:map <M-t> <C-w>-
-:map <M-n> <C-w>+
-:map <M-s> <C-w><
-:map <M-r> <C-w><C-w>
-:map <M-c> <C-w><S-w>
-:map <M-p> "+p
-:map <M-P> "+P
-
-
-:noremap e s
-:noremap E S
-:noremap S E
-:noremap l n
-:noremap t j
-:noremap n k
-:noremap s l
-:noremap - ^
-:noremap _ $
-:noremap L N
-:noremap j t
-:noremap J T
-:map N 8<up>
-:map T 8<down>
-:noremap K J
-
-
+" toggle wrap line in normal mode :  ,w
 function ToggleWrap()
 	if &wrap
 		set nowrap
@@ -71,24 +36,23 @@ function ToggleWrap()
 endfunction
 nmap <silent> ,w <Esc>:call ToggleWrap()<CR>
 
-function ToggleHLSearch()
-	if &hls
-		set nohls
-		exe "echo 'Highlight OFF'"
-	else
-		set hls
-		exe "echo 'Highlight ON'"
-	endif
+" toggle keyboard mapping in normal mode : ,.
+function ToggleKeymap(keymap)
+    let keymap = a:keymap
+    if keymap == "dvorak"
+        echom "Switch -> default"
+        :source ~/.vimrc.default
+        return "default"
+    else
+        echom "Switch -> dvorak"
+        :source ~/.vimrc.dvorak
+        return "dvorak"
+    endif
 endfunction
-nmap <silent> ,n <Esc>:call ToggleHLSearch()<CR>
 
-" Bloc phpdoc
-inoremap <C-E> <ESC>:call PhpDocSingle()<CR>i
-nnoremap <C-E> :call PhpDocSingle()<CR>
-vnoremap <C-E> :call PhpDocRange()<CR>
+let FnToggleKeymapReference = function("ToggleKeymap")
+nmap <silent> ,. <Esc>:let keymap = call(FnToggleKeymapReference, [keymap])<CR>
 
-let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
-" ouvre un onglet dans firefox sur php.net avec le mot selectionn�
-vmap ,p :<C-U>!firefox "http://fr.php.net/<cword>" >& /dev/null<CR><CR>
- 
+" dvorak layout default
+let keymap = "dvorak"
+:source ~/.vimrc.dvorak
