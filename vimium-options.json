@@ -9,7 +9,7 @@
   "filterLinkHints": true,
   "waitForEnterForFilteredHints": true,
   "hideHud": false,
-  "keyMappings": "# vimium key mappings\n# Insert your preferred key mappings here.\nmap S goForward\nmap T scrollPageDown\nmap N scrollPageUp\nmap d removeTab\nmap D restoreTab\nmap <m-h> previousTab\nmap <m-s> nextTab\nmap A Vomnibar.activateEditUrl",
+  "keyMappings": "# vimium key mappings\n# Insert your preferred key mappings here.\nmap S goForward\nmap T scrollPageDown\nmap N scrollPageUp\nmap d removeTab\nmap u restoreTab\nmap <m-h> previousTab\nmap <m-s> nextTab\nmap <m-t> createTab\nmap t scrollDown\nmap n scrollUp\nmap A Vomnibar.activateEditUrl",
   "linkHintCharacters": "sadfjklewcmpgh",
   "linkHintNumbers": "0123456789",
   "newTabUrl": "about:newtab",
