@@ -22,6 +22,7 @@ syntax enable
 :set nobackup
 :set nowritebackup
 :set noswapfile
+:set packpath=~/AppData/Local/nvim-data,~/AppData/Local/nvim,~/AppData/Local/nvim-data/site
 
 " Go back to the position the cursor was on the last time this file was edited
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")|execute("normal `\"")|endif
@@ -56,3 +57,5 @@ nmap <silent> ,. <Esc>:let keymap = call(FnToggleKeymapReference, [keymap])<CR>
 " dvorak layout default
 let keymap = "dvorak"
 :source ~\AppData\Local\nvim\neovim.dvorak.vim
+
+:source ~\AppData\Local\nvim\neovim.packer.lua
