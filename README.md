@@ -14,5 +14,10 @@ Différents fichiers de configuration
  - [.ideavimrc](.ideavimrc)
 
 # XCode / plugin [XVim](https://github.com/JugglerShu/XVim)
-
  - [.xvimrc](.xvimr)
+
+# P10K Iterm 2 Config
+p10k : https://gist.github.com/kevin-smets/8568070
+
+ - [.p10k.zsh](.p10k.zsh)
+
